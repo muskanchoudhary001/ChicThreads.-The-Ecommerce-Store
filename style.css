@@ -422,7 +422,7 @@ h5 a{
 .heading{
     font-size: 1.1rem;
     line-height: 4rem;
-    font-weight: 400;
+    /*font-weight: 400;*/
 
 }
 .blog-content *{
@@ -438,7 +438,7 @@ h5 a{
     text-transform: uppercase;
 }
 .blog-box:hover .blog-content{
-    left: 50%;
+    /*left: 50%;*/
      opacity: 1;
      visibility: visible;
 }
@@ -636,14 +636,33 @@ form h3{
     }
     .blog-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        /*grid-template-columns: repeat(2, 1fr);*/
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     .blog-box {
-        flex-basis: 200px;
+        flex-basis: 100%;
     }
     .blog-content {
+        position: absolute;
+        top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; /* Adjusted width to fit within the box */
+        text-align: center;
+        z-index: 4;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
+        padding-inline: 1rem; /* Adjusted padding for mobile */
+    }
+    .blog-box:hover .blog-content {
+        opacity: 1;
+        visibility: visible;
+    }
+    .heading {
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
     .hero {
         height: 50vh;
