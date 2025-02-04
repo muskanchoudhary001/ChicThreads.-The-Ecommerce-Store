@@ -117,6 +117,30 @@ span,
     color: var(--primary-clr);
     display: none;
 }
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: width 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+}
+
+.search-container:hover .search-input {
+    width: 150px;
+    padding: 0.5rem;
+    opacity: 1;
+}
+
+.search-icon {
+    cursor: pointer;
+}
 
 /*Sections Styling*/
 .hero{
@@ -559,22 +583,25 @@ form h3{
         padding: 2rem;
         transform: translateY(-100%);
         transition: all .3s ease-in-out; 
-       
     }
-    .navlist-active{
+    .navlist-active {
         transform: translateY(20%);
     }
-    .navlist .link{
+    .navlist .link {
         color: var(--secondary-clr);
         font-weight: 400;
     }
     .nav-icons a,
     .link:hover,
-    .navlist .link-active{
+    .navlist .link-active {
         color: var(--primary-clr);
     }
     .hamburger {
         display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
     }
     .nav-icons {
         gap: 1.5rem;
@@ -619,18 +646,46 @@ form h3{
         left: 50%;
     }
     .hero {
-        height: 60vh;
+        height: 50vh;
     }
     h3 {
         font-size: 1.3rem;
         line-height: 1.3rem;
+        padding-left: 2rem;
+
     }
     h1 {
         font-size: 2.2rem;
         line-height: 4rem;
+        
+     
     }
     h4 {
         font-size: 1.1rem;
         line-height: 2rem;
+      
+         
+    }
+    .input-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .input-container input {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .input-container button {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: var(--primary-clr);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .secondary-bg {
+        padding: 1rem;
+        background-color: #f0f0f0;
     }
 }
